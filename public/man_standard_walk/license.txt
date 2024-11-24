@@ -1,0 +1,11 @@
+Model Information:
+* title:	Man Standard Walk
+* source:	https://sketchfab.com/3d-models/man-standard-walk-2eb641f65ccb489fa319851afc6a08e9
+* author:	Appsbypaulhamilton (https://sketchfab.com/Appsbypaulhamilton)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Man Standard Walk" (https://sketchfab.com/3d-models/man-standard-walk-2eb641f65ccb489fa319851afc6a08e9) by Appsbypaulhamilton (https://sketchfab.com/Appsbypaulhamilton) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

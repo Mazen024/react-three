@@ -1,0 +1,76 @@
+/* .App {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, #19325f, #2a5298);
+  color: white;
+}
+
+.content {
+  max-width: 40%;
+}
+
+.main-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.sub-heading {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.three-container {
+  width: 50%;
+  height: 100%;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.three-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000; /* Set a dark background to highlight the shop */
+}
+.loader {
+  width: 300px;
+  height: 22px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #333, #555);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  position: relative;
+}
+
+.loader > div {
+  height: 100%;
+  background: linear-gradient(90deg, #4caf50, #81c784);
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.6);
+  transition: width 0.3s ease-in-out;
+  transform-origin: left;
+}
