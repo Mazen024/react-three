@@ -1,15 +1,16 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
-import Home from "../Home/Home";
 
-function Login({ onLoginSuccess }) {
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onLoginSuccess();
-    <Home />;
+
+    navigate("/home", { replace: true });
   };
 
   return (
@@ -41,6 +42,9 @@ function Login({ onLoginSuccess }) {
         <button type="submit" className="login-btn">
           Log In
         </button>
+        <div className="link-container">
+          <Link to={"/signup"}>need registration</Link>
+        </div>
       </form>
     </div>
   );

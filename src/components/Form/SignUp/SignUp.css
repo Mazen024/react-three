@@ -58,3 +58,18 @@
 .login-btn:hover {
   background: #0056b3;
 }
+
+.link-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.link-container a {
+  color: #007bff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.link-container a:hover {
+  text-decoration: underline;
+}

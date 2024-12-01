@@ -1,20 +1,23 @@
 import React, { useState } from "react";
-import "./SignUp.css"; // Add your styles here
+import { Link, useNavigate } from "react-router-dom";
+import "./SignUp.css";
 
-export default function SignUp({ onSignUpSuccess }) {
+export default function SignUp() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (password !== confirmPassword) {
+    if (password === confirmPassword) {
+      navigate("/home", { replace: true });
+    } else {
       alert("Passwords do not match");
       return;
     }
-    onSignUpSuccess();
   };
 
   return (
@@ -64,6 +67,9 @@ export default function SignUp({ onSignUpSuccess }) {
         <button type="submit" className="login-btn">
           Sign Up
         </button>
+        <div className="link-container">
+          <Link to={"/login"}>already have an account</Link>
+        </div>
       </form>
     </div>
   );
