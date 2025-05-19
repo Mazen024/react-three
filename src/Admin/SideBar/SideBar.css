@@ -1,0 +1,128 @@
+:root {
+    --sidebar-bg-color: #fff;
+    --sidebar-text-color: #34495e;
+    --sidebar-hover-color: #0dc1a3;
+    --sidebar-active-color: #0D7377;
+    --sidebar-logout-hover-color: #c42d1c;
+    --sidebar-width-expanded: 250px;
+    --sidebar-width-collapsed: 80px;
+}
+
+/* Sidebar Container */
+.sidebar {
+    height: 100vh;
+    background-color: var(--sidebar-bg-color);
+    color: var(--sidebar-text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s;
+    position: fixed; 
+    top: 0;
+    left: 0;
+}
+
+.sidebar.expanded {  
+    width: var(--sidebar-width-expanded);
+}
+
+.sidebar.collapsed {
+    width: var(--sidebar-width-collapsed);
+}
+
+.menu-icon {
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.logoTitle {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Menu Section */
+.nav-container {
+    flex: 1;
+}
+
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-item:hover {
+    background-color: var(--sidebar-hover-color);
+    color: white;
+}
+
+.nav-item.active {
+    background-color: var(--sidebar-active-color);
+    color: white;
+}
+
+.nav-icon {
+    margin-right: 15px;
+}
+
+  .nav-item.active .nav-label {
+    font-size: 1.1em; 
+} 
+
+/* Logout Section */
+.logout {
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout:hover {
+    background-color: var(--sidebar-logout-hover-color);
+    color: white;
+    animation: shake 0.5s;
+}
+
+.logoutTitle {
+    transition: 0.5s;
+    margin-left: 15px;
+    font-size: 1em;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}

@@ -1,0 +1,246 @@
+.shopsContainer {
+  width: 100%;
+  margin: 20px 0;
+  padding: 0 15px;
+}
+
+.shopsHeading {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  color: #333;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.headingIcon {
+  margin-right: 10px;
+  color: #109095;
+  font-size: 24px;
+}
+
+.shopsList {
+  position: relative;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 5px 10px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #0d7377 #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.shopsList::-webkit-scrollbar {
+  height: 6px;
+}
+
+.shopsList::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.shopsList::-webkit-scrollbar-thumb {
+  background-color: #13c2c2;
+  border-radius: 10px;
+}
+
+.hasScrollShadow {
+  background: linear-gradient(90deg, #fff 0%, #fff 100%);
+  box-shadow: inset 15px 0 10px -10px rgba(0, 0, 0, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.shopsList ul {
+  display: flex;
+  list-style: none;
+  padding: 10px 5px;
+  margin: 0;
+  min-width: max-content;
+  justify-content: space-around;
+}
+
+.shopsList li {
+  display: inline-block;
+}
+
+.shopLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #555;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.shopLink:hover {
+  background-color: #e8f7f7;
+  color: #13c2c2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shopLink.active {
+  background-color: #13c2c2;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(19, 194, 194, 0.3);
+}
+
+.shopLink.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(19, 194, 194, 0.4);
+}
+
+.shopIcon {
+  margin-right: 8px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.shopName {
+  position: relative;
+}
+
+.shopLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background-color: #13c2c2;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.shopLink:hover::after {
+  width: 70%;
+  opacity: 1;
+}
+
+.shopLink.active::after {
+  width: 90%;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+  .shopsHeading {
+    font-size: 20px;
+  }
+
+  .headingIcon {
+    font-size: 22px;
+  }
+
+  .shopLink {
+    padding: 8px 14px;
+    font-size: 15px;
+  }
+
+  .shopIcon {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .shopsContainer {
+    margin: 15px 0;
+    padding: 0 10px;
+  }
+
+  .shopsHeading {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .headingIcon {
+    font-size: 20px;
+  }
+
+  .shopsList {
+    border-radius: 10px;
+    padding: 3px 8px;
+  }
+
+  .shopsList ul {
+    gap: 8px;
+    padding: 8px 3px;
+  }
+
+  .shopLink {
+    padding: 7px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  .shopIcon {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 350px) {
+  .shopsHeading {
+    font-size: 16px;
+  }
+
+  .headingIcon {
+    font-size: 18px;
+    margin-right: 6px;
+  }
+
+  .shopsList ul {
+    gap: 6px;
+  }
+
+  .shopLink {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .shopIcon {
+    font-size: 14px;
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: 268px) {
+  .shopsContainer {
+    padding: 0 5px;
+  }
+
+  .shopsHeading {
+    font-size: 15px;
+    padding-left: 5px;
+  }
+
+  .shopsList {
+    padding: 2px 5px;
+  }
+
+  .shopsList ul {
+    gap: 5px;
+    padding: 6px 2px;
+  }
+
+  .shopLink {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+
+  .shopLink::after {
+    height: 2px;
+  }
+}

@@ -1,0 +1,17 @@
+:root {
+  --sidebar-width-expanded: 250px;
+  --sidebar-width-collapsed: 80px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  margin-left: var(--sidebar-width-expanded);
+  padding: 50px;
+  transition: margin-left 0.3s;
+  background-color: #f5f5f5; 
+}
+.sidebar.collapsed + main {
+  height: 100%;
+  margin-left: var(--sidebar-width-collapsed);
+}

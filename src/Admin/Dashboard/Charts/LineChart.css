@@ -1,0 +1,6 @@
+.containerOfLineChart{
+    width: 100%;
+    max-width: 400px;
+    min-width: 180px;
+    margin-bottom: 10px;
+}

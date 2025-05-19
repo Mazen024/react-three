@@ -1,0 +1,407 @@
+.sellerLayout {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: #f8fafc;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.sidebar {
+  width: 280px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 100;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.logo {
+  padding: 24px;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h2 {
+  color: #0f172a;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .logo h2 {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.toggleButton {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.toggleButton:hover {
+  background-color: #f1f5f9;
+  color: #334155;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  flex-grow: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.navLink,
+.activeLink {
+  display: flex;
+  align-items: center;
+  padding: 14px 24px;
+  color: #64748b;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+  margin-bottom: 6px;
+  min-height: 44px;
+}
+
+.navIcon {
+  font-size: 1.2rem;
+  margin-right: 14px;
+  min-width: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navText {
+  transition: opacity 0.3s ease, width 0.3s ease;
+  white-space: nowrap;
+}
+
+.sidebar.collapsed .navText {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.navLink:hover {
+  background-color: #f1f5f9;
+  color: #334155;
+}
+
+.activeLink {
+  background-color: rgba(59, 130, 246, 0.08);
+  color: #3b82f6;
+  border-left-color: #3b82f6;
+  font-weight: 600;
+}
+
+.userSection {
+  padding: 20px 24px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  background-color: #fafafa;
+}
+
+.userAvatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  margin-right: 12px;
+  position: relative;
+  flex-shrink: 0;
+  border: 2px solid #f1f5f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.statusIndicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #10b981;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+.userInfo {
+  flex-grow: 1;
+  transition: opacity 0.3s ease, width 0.3s ease;
+  min-width: 0;
+}
+
+.sidebar.collapsed .userInfo {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.userName {
+  font-weight: 600;
+  color: #334155;
+  margin: 0;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userRole {
+  color: #64748b;
+  margin: 0;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contentWrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.menuButton {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 40;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  color: #64748b;
+  font-size: 1.2rem;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 30px;
+  overflow-y: auto;
+  background-color: #f8fafc;
+  -webkit-overflow-scrolling: touch;
+}
+
+.footer {
+  padding: 20px 30px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #64748b;
+  font-size: 0.85rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.footerLink {
+  color: #212121;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+  color: #0dc1a3;
+}
+
+.logoutSection {
+  margin-top: auto;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  color: #ef4444;
+  font-size: 1.1rem;
+  width: 100%;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.logoutBtn:hover {
+  background-color: rgba(254, 226, 226, 0.5);
+}
+
+.logoutSection:hover {
+  background: #f1f5f9;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Improved Responsive Design */
+@media (max-width: 1200px) {
+  .sidebar:not(.collapsed) {
+    width: 240px;
+  }
+}
+
+@media (max-width: 992px) {
+  .sidebar:not(.collapsed) {
+    width: 220px;
+  }
+
+  .logo {
+    padding: 18px;
+  }
+
+  .logo h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    box-shadow: none;
+    width: 260px; /* Slightly wider on mobile for better touch targets */
+  }
+
+  .sidebar.collapsed {
+    transform: translateX(-100%);
+    width: 260px; /* Keep same width when collapsed on mobile */
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  /* Show full text in mobile sidebar even when "collapsed" class is present */
+  .sidebar.collapsed .logo h2,
+  .sidebar.collapsed .navText,
+  .sidebar.collapsed .userInfo {
+    opacity: 1;
+    width: auto;
+    overflow: visible;
+  }
+
+  .sidebar.collapsed .navLink,
+  .sidebar.collapsed .activeLink {
+    padding: 14px 24px;
+  }
+
+  .main {
+    padding: 20px 15px;
+    margin-top: 40px; /* Space for the menu button */
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .footerLinks {
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 280px;
+  }
+
+  .main {
+    padding: 15px 10px;
+  }
+
+  .navLink,
+  .activeLink {
+    padding: 16px 20px;
+  }
+
+  .menuButton {
+    top: 15px;
+    left: 15px;
+  }
+}

@@ -1,0 +1,40 @@
+.notFoundContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; 
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .notFoundTitle {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 10px;
+  }
+  
+  .notFoundSubTitle {
+    font-size: 1.5rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+  }
+  
+  .backToHomeButton {
+    padding: 15px 30px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #34495e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+
+  }
+  
+  .backToHomeButton:hover {
+    background-color: #4318FF;
+  }
+  

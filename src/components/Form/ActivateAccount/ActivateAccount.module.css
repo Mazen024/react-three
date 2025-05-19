@@ -1,0 +1,176 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modalContent {
+  background-color: #eeeeee;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  color: #212121;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  animation: slideIn 0.3s ease-out;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.closeButton:hover {
+  color: #333;
+}
+
+.activateTitle {
+  margin-top: 0;
+  color: #0d7377;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.activateDescription {
+  text-align: center;
+  color: #212121;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputField {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
+.inputField:focus {
+  border-color: #0d7377;
+  outline: none;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 16px;
+  background: var(--primary-color);
+  color: var(--text-dark);
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease-in-out;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  margin-top: 12px;
+}
+
+.submitButton:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.6s;
+}
+
+.submitButton:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.submitButton:hover:before {
+  left: 100%;
+}
+
+.submitButton:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(13, 115, 119, 0.3);
+}
+
+.submitButton:focus-visible {
+  outline: 2px solid #0d7377;
+  outline-offset: 2px;
+}
+
+.verifying {
+  color: #0dc1a3;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.success {
+  color: #2ecc71;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.error {
+  color: #c42d1c;
+  text-align: center;
+  margin-top: 15px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalContent {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .activateTitle {
+    font-size: 20px;
+  }
+}

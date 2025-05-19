@@ -1,0 +1,351 @@
+.appContainer {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebar {
+  width: 70px;
+  background-color: #0d7377;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  height: 100vh;
+  z-index: 100;
+}
+
+.sidebarTop,
+.sidebarBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebarIcon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f8f9fa;
+  font-size: 1.4rem;
+  margin: 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.sidebarIcon:hover {
+  background-color: #f0f2f5;
+  color: #0d7377;
+  transform: translateY(-2px);
+}
+
+.logoIcon {
+  margin: 20px 0 30px;
+  background-color: #0dc1a384;
+  color: white;
+  font-size: 1.6rem;
+}
+
+.logoutIcon:hover {
+  color: #ff4757;
+}
+
+.iconTooltip {
+  position: absolute;
+  left: 70px;
+  background-color: #343a40;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.sidebarIcon:hover .iconTooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.profileContainer {
+  flex: 1;
+  padding: 2rem;
+  margin-left: 70px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.welcomeText {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.dateText {
+  font-size: 1rem;
+  color: #666;
+  margin: 0.5rem 0 0;
+}
+
+.errorMessage,
+.successMessage {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.errorMessage {
+  background-color: #ffe0e0;
+  color: #d32f2f;
+  border-left: 4px solid #d32f2f;
+}
+
+.successMessage {
+  background-color: #e0f7ea;
+  color: #0d7377;
+  border-left: 4px solid #0dc1a3;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.profileImageContainer {
+  position: relative;
+  cursor: pointer;
+  margin-right: 1.5rem;
+}
+
+.profileImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.profileImage:hover {
+  border-color: #0d7377;
+  transform: scale(1.05);
+}
+
+.uploading {
+  opacity: 0.7;
+  filter: grayscale(50%);
+}
+
+.fileInput {
+  display: none;
+}
+
+.profileInfo {
+  flex: 1;
+}
+
+.profileName {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.5rem;
+}
+
+.profileEmail {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.editButton,
+.cancelButton {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  min-width: 100px;
+}
+
+.editButton {
+  background-color: #0d7377;
+  color: white;
+}
+
+.editButton:hover:not(:disabled) {
+  background-color: #0dc1a3;
+  transform: translateY(-2px);
+}
+
+.editButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.cancelButton {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  border: 1px solid #dee2e6;
+}
+
+.cancelButton:hover {
+  background-color: #e9ecef;
+  transform: translateY(-2px);
+}
+
+.spinnerIcon {
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.profileFields {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.fieldColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profileField {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.fieldInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.2s ease;
+}
+
+.fieldInput:focus {
+  outline: none;
+  border-color: #0d7377;
+}
+
+.fieldInput:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.emailSection {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.emailItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.loadingSpinner {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  animation: spin 1s infinite linear;
+}
+
+@media (max-width: 768px) {
+  .profileFields {
+    flex-direction: column;
+  }
+
+  .profileHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profileImageContainer {
+    margin: 0 0 1rem;
+  }
+
+  .profileInfo {
+    margin-bottom: 1rem;
+  }
+
+  .sidebar {
+    width: 60px;
+  }
+
+  .profileContainer {
+    margin-left: 60px;
+    padding: 1rem;
+  }
+}

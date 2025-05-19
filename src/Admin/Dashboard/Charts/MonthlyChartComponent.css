@@ -1,0 +1,38 @@
+.containerOfMonthlyChartComponent{
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    background-color: #EEEEEE;
+    width: 100%;
+    max-width: 650px;
+    min-width: 180px;
+    max-height: 300px;
+    min-height: 250px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.containerOfHeader{
+    display: flex;
+    margin-left: 7%;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+    margin-top: 20px;
+}
+.titleOfObjective{
+    color: #00bb9c;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+.totalProfits{
+    font-size: 20px;
+    font-weight: bold;
+}
+.containerOfIconAndProfits{
+    display: flex;
+    justify-content: space-between;
+}
+.iconOfChart{
+    margin-right: 8%;
+}

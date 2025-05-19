@@ -1,0 +1,242 @@
+/* ShopDetail.module.css */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 1rem;
+}
+
+.shopName {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.loadingContainer,
+.errorContainer,
+.notFoundContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.errorContainer {
+  color: #d32f2f;
+}
+
+.detailsSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.detailCard {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.detailCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.detailTitle {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.detailValue {
+  font-size: 1.2rem;
+  color: #333;
+  word-break: break-word;
+}
+
+.sectionHeading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin: 2rem 0 1rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.5rem;
+}
+
+.shopAssetsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.assetCard {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.assetCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cardContent {
+  font-size: 0.9rem;
+  color: #666;
+  word-break: break-all;
+  flex-grow: 1;
+}
+
+.assetIconImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  max-height: 150px;
+}
+
+.errorCard {
+  grid-column: 1 / -1;
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.errorMessage {
+  color: #b91c1c;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.coordinateItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.coordinateLabel {
+  font-weight: 600;
+  color: #555;
+}
+
+.coordinateValue {
+  color: #333;
+}
+
+.actionsContainer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.editButton {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.editButton:hover {
+  background-color: #2563eb;
+}
+
+.assetsButton {
+  background-color: #10b981;
+  color: white;
+}
+
+.assetsButton:hover {
+  background-color: #059669;
+}
+
+.deleteButton {
+  background-color: #ef4444;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #dc2626;
+}
+
+.uploadButton {
+  background-color: #8b5cf6;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.uploadButton:hover {
+  background-color: #7c3aed;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .detailsSection {
+    grid-template-columns: 1fr;
+  }
+  
+  .shopAssetsContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .actionsContainer {
+    flex-direction: column;
+  }
+  
+  .button {
+    width: 100%;
+  }
+  
+  .shopName {
+    font-size: 2rem;
+  }
+}
